@@ -1,0 +1,293 @@
+/* start var  */
+:root {
+    --dark-gray: hsl(270, 20%, 96%);
+    --gradiant: linear-gradient(180deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+    --dark-violet: hsl(271, 36%, 24%);
+    --light-purple: hsl(289, 100%, 72%);
+}
+
+/* end var  */
+/* start global rules  */
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+
+
+}
+
+body {
+    font-family: "Rubik";
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+a {
+    text-decoration: none;
+
+}
+
+/* end global rules  */
+.container {
+    gap: 100px;
+    padding: 30px;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: radial-gradient(circle at 13% 47%, rgba(140, 140, 140, 0.03) 0%, rgba(140, 140, 140, 0.03) 25%, transparent 25%, transparent 100%), radial-gradient(circle at 28% 63%, rgba(143, 143, 143, 0.03) 0%, rgba(143, 143, 143, 0.03) 16%, transparent 16%, transparent 100%), radial-gradient(circle at 81% 56%, rgba(65, 65, 65, 0.03) 0%, rgba(65, 65, 65, 0.03) 12%, transparent 12%, transparent 100%), radial-gradient(circle at 26% 48%, rgba(60, 60, 60, 0.03) 0%, rgba(60, 60, 60, 0.03) 6%, transparent 6%, transparent 100%), radial-gradient(circle at 97% 17%, rgba(150, 150, 150, 0.03) 0%, rgba(150, 150, 150, 0.03) 56%, transparent 56%, transparent 100%), radial-gradient(circle at 50% 100%, rgba(25, 25, 25, 0.03) 0%, rgba(25, 25, 25, 0.03) 36%, transparent 36%, transparent 100%), radial-gradient(circle at 55% 52%, rgba(69, 69, 69, 0.03) 0%, rgba(69, 69, 69, 0.03) 6%, transparent 6%, transparent 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+    z-index: 1;
+    animation: background-anim 30s alternate infinite;
+
+}
+
+@keyframes background-anim {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    50% {
+        background-position: -350px 50px;
+    }
+
+
+
+
+}
+
+.container::before,
+.container::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 537px;
+}
+
+.container::before {
+    left: -40px;
+    top: -165px;
+    width: 375px;
+    height: 750px;
+    background-image: var(--gradiant);
+}
+
+.container::after {
+    right: -80px;
+    bottom: -205px;
+    width: 375px;
+    height: 750px;
+    background-image: linear-gradient(180deg, hsla(293, 100%, 63%, 0.034), hsla(264, 100%, 61%, 0.069));
+
+}
+
+@media(max-width:767px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .container::after {
+        display: none;
+    }
+}
+
+.app {
+    width: 300px;
+    border: 10px solid white;
+    -webkit-box-shadow: 3px 4px 52px -28px rgb(0, 0, 0);
+    -moz-box-shadow: 3px 4px 52px -28px rgb(2, 2, 2);
+    box-shadow: 3px 4px 52px -28px rgb(0, 0, 0);
+    border-radius: 20px;
+
+
+}
+
+.app .header {
+    background-image: var(--gradiant);
+    border-radius: 10px 10px 10px 0px;
+    padding: 30px 20px 0px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 100px;
+}
+
+.app .header::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 50px;
+    border-radius: 78px;
+    background-color: white;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.app .header img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.app .header h5 {
+    font-size: 12px;
+}
+
+.app .header span {
+    color: hsl(276, 100%, 81%);
+    font-size: 10px;
+}
+
+.app .content {
+    background-color: var(--dark-gray);
+    font-size: 8px;
+    padding: 20px 10px;
+    border-radius: 0px 10px 10px 10px;
+}
+
+.app .content .left-massages {
+    background-color: hsla(270.9, 15.1%, 42.9%, 0.11);
+    color: hsl(276, 55%, 52%);
+    width: 50%;
+    padding: 5px 10px 5px 5px;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+.app .content .right-massages {
+    background-color: white;
+    font-size: 8px;
+    width: 50%;
+    margin-left: auto;
+    color: hsl(271, 15%, 43%);
+    padding: 5px 8px;
+    border-radius: 10px;
+}
+
+.app .content .images {
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+}
+
+.app .content .images img {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    display: block;
+}
+
+.app .content input[type="radio"] {
+    display: none;
+}
+
+.app .content input:checked+label::after {
+    transform: scale(1);
+}
+
+.app .content input:checked+label {
+    background-position: 130px 0px;
+}
+
+.app .content label {
+    padding: 5px 20px !important;
+    background-image: linear-gradient(90deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+    color: white !important;
+    position: relative;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.app .content label::before {
+    content: "";
+    position: absolute;
+    border: 1px solid hsl(289, 92%, 61%);
+    width: 10px;
+    height: 10px;
+    left: 5px;
+    border-radius: 50%;
+}
+
+.app .content label::after {
+    content: "";
+    position: absolute;
+    background-color: blueviolet;
+    width: 10px;
+    height: 10px;
+    left: 5px;
+    border: 1px solid hsl(289, 92%, 61%);
+    transform: scale(0);
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.app .content label .time {
+    font-size: 8px;
+}
+
+.app .content input[type="text"] {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    margin-top: 10px;
+    padding: 10px 20px;
+    caret-color: rgb(134, 5, 255);
+    position: relative;
+}
+
+.app .content input[type="text"]+i {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: hsl(271, 36%, 24%);
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    transition: .3s;
+
+}
+
+.app .content input[type="text"]+i:hover {
+    transform: translateY(-50%) scale(1.1);
+
+}
+
+
+.app .content input[type="text"]::placeholder {
+    color: hsl(206, 6%, 79%);
+    font-size: 8px;
+
+}
+
+.text {
+    max-width: 400px;
+    text-align: left;
+}
+
+.text h1 {
+    color: hsl(271, 36%, 24%);
+}
+
+.text p {
+    color: hsl(271, 15%, 43%);
+    line-height: 1.7;
+}
